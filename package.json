@@ -1,0 +1,19 @@
+{
+  "name": "splash",
+  "version": "1.0.0",
+  "description": "A rapid web prototyping tool based on the liquid templating language",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stewartknapman/splash.git"
+  },
+  "author": "@stewartknapman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stewartknapman/splash/issues"
+  },
+  "homepage": "https://github.com/stewartknapman/splash"
+}

@@ -5,7 +5,7 @@
   "main": "app.js",
   "preferGlobal": true,
   "bin": {
-    "splash": "./bin/splash"
+    "splash": "./bin/splash.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

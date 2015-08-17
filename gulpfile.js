@@ -30,8 +30,8 @@ gulp.task('js_lint', function () {
 
 gulp.task('js_browserify', function () {
   return browserify('./_src/app.js', {
-    debug: argv.dev, // to output source maps for easy debuging run task with --dev flag
-  })
+      debug: true,
+    })
     .bundle()
     .pipe(source('app.min.js'))
     .pipe(gulp.dest('./_dist/'));

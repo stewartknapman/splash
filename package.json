@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "A rapid web prototyping tool based on the liquid templating language",
   "main": "app.js",
+  "preferGlobal": true,
+  "bin": {
+    "splash": "./bin/splash"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

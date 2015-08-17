@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/stewartknapman/splash/issues"
   },
-  "homepage": "https://github.com/stewartknapman/splash"
+  "homepage": "https://github.com/stewartknapman/splash",
+  "devDependencies": {
+    "browserify": "^11.0.1",
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-plumber": "^1.0.1",
+    "liquid.js": "^1.3.2",
+    "vinyl-source-stream": "^1.1.0"
+  }
 }

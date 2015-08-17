@@ -1,8 +1,6 @@
 var gulp        = require('gulp'),
   gutil         = require('gulp-util'),
   plumber       = require('gulp-plumber'),
-  source        = require('vinyl-source-stream'),
-  browserify    = require('browserify'),
   jshint        = require('gulp-jshint');
 
 // Error
@@ -11,28 +9,19 @@ var onError = function (err) {
   gutil.log(gutil.colors.red(err));
 };
 
+var js_files = ['./lib/*.js', './app.js'];
+
 // Default watch tasks
 gulp.task('default', function () {
   // watch for js changes
-  gulp.watch('./_src/*.js', ['js']);
+  gulp.watch(js_files, ['js_lint']);
 });
 
-gulp.task('js', ['js_lint', 'js_browserify']);
-
 gulp.task('js_lint', function () {
-  return gulp.src('./_src/*.js')
+  return gulp.src(js_files)
     .pipe(plumber({
       errorHandler: onError
     }))
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
-});
-
-gulp.task('js_browserify', function () {
-  return browserify('./_src/app.js', {
-      debug: true,
-    })
-    .bundle()
-    .pipe(source('app.min.js'))
-    .pipe(gulp.dest('./_dist/'));
 });

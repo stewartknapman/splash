@@ -2,7 +2,6 @@
   "name": "splash",
   "version": "1.0.0",
   "description": "A rapid web prototyping tool based on the liquid templating language",
-  "main": "app.js",
   "preferGlobal": true,
   "bin": {
     "splash": "./bin/splash.js"
@@ -25,6 +24,7 @@
     "gulp-jshint": "^1.11.2",
     "gulp-plumber": "^1.0.1",
     "gulp-util": "^3.0.6",
-    "liquid.js": "^1.3.2"
+    "liquid.js": "^1.3.2",
+    "minimist": "^1.2.0"
   }
 }

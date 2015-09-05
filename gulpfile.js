@@ -9,7 +9,7 @@ var onError = function (err) {
   gutil.log(gutil.colors.red(err));
 };
 
-var js_files = ['./lib/*.js', './app.js'];
+var js_files = ['./lib/**.js', './bin/*.js'];
 
 // Default watch tasks
 gulp.task('default', function () {

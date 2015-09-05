@@ -1,0 +1,11 @@
+{
+  "title": "Test Collection",
+  "products": [
+    {
+      "title": "product 1"
+    },
+    {
+      "title": "product 2"
+    }
+  ]
+}

@@ -7,8 +7,10 @@ A rapid web prototyping tool based on the liquid templating language.
 We want to take a json file, a liquid template and then mash them together into a static file.
 
 If data.json file is prefixed with .liquid it will be run through the liquid compiler first.
-You will not be able to use any objects within it i.e. `product.title` but you will be able to use filters, variables and loops.
-This is good if you want to create repeating data.
+You will not be able to use any objects within it i.e. `product.title` but you will be able to use includes, filters, variables and loops.
+This is good if you want to create repeating or nested data.
+
+(Note to self: collection.json needs to match to collection.liquid so that {{ title }} inside collection comes from collection.title)
 
 ## Commands
 

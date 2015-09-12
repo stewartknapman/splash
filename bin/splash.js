@@ -43,7 +43,7 @@ switch (argv._[0]) {
     // setup server, run splash.build() and serve output
     // watch files for change
     // on change run splash.build() and reload
-    u.log(chalk.red('SPLASH: serve'));
+    u.log(chalk.red('SPLASH TODO: serve'));
     break;
     
   default:

@@ -25,7 +25,7 @@
     "gulp-jshint": "^1.11.2",
     "gulp-plumber": "^1.0.1",
     "gulp-util": "^3.0.6",
-    "liquid.js": "git+https://github.com/stewartknapman/liquid.js.git",
+    "liquid.js": "git+https://github.com/stewartknapman/liquid.js.git#new_build",
     "minimist": "^1.2.0"
   }
 }

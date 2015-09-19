@@ -40,10 +40,18 @@ switch (argv._[0]) {
     break;
     
   case 'serve':
+    // TODO:
     // setup server, run splash.build() and serve output
     // watch files for change
     // on change run splash.build() and reload
     u.log(chalk.red('SPLASH TODO: serve'));
+    break;
+    
+  case 'generate':
+    // TODO:
+    // create dirs,
+    // add a config file to check against for custom naming of dirs
+    u.log(chalk.red('SPLASH TODO: generate'));
     break;
     
   default:

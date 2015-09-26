@@ -2,6 +2,7 @@
 
 var fs      = require('fs');
 var chalk   = require('chalk');
+var chokidar = require('chokidar');
 var u       = require('../lib/utils');
 var Splash  = require('../lib/app.js');
 
@@ -26,17 +27,21 @@ function build_and_output () {
 
 switch (argv._[0]) {
   case 'watch':
-    // Note: watch can fire mlitple times: http://stackoverflow.com/questions/12978924/fs-watch-fired-twice-when-i-change-the-watched-file
-    // maybe look at implimenting this later: https://github.com/paulmillr/chokidar
-    // TODO: Only watch files needed for liquid i.e. templates/*, includes/*, data/*
+    // Note: Only watch files needed for liquid i.e. templates/*, includes/*, data/*
     u.log(chalk.blue('Starting splash watch: '), chalk.magenta(cwd));
-    fs.watch(cwd, { recursive: true }, function (event, fname) {
-      var build = true;
-      if (fname) {
-        var dir = fname.split('/')[0];
-        if (dir === options.output_dir) build = false; // don't build files inside the build dir
-      }
-      if (build) build_and_output();
+    
+    var watch_files = [
+      options.template_dir,
+      options.include_dir,
+      options.data_dir
+    ];
+    
+    chokidar.watch(watch_files, {
+      persistent: true,
+      cwd: '.'
+    }).on('change', function (path) {
+      u.log(chalk.blue('File changed: '), chalk.magenta(path));
+      build_and_output();
     });
     break;
     

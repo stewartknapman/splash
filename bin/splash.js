@@ -21,19 +21,20 @@ function build_and_output () {
   var build = splash.build();
   u.log(chalk.blue('Outputting built files.'));
   splash.output(build);
-  u.log(chalk.blue('Done.'));
+  u.log(chalk.green('Done.'));
 }
 
 switch (argv._[0]) {
   case 'watch':
     // Note: watch can fire mlitple times: http://stackoverflow.com/questions/12978924/fs-watch-fired-twice-when-i-change-the-watched-file
     // maybe look at implimenting this later: https://github.com/paulmillr/chokidar
+    // TODO: Only watch files needed for liquid i.e. templates/*, includes/*, data/*
     u.log(chalk.blue('Starting splash watch: '), chalk.magenta(cwd));
     fs.watch(cwd, { recursive: true }, function (event, fname) {
       var build = true;
       if (fname) {
         var dir = fname.split('/')[0];
-        if (dir === flags.output_dir) build = false; // don't build on the build dir
+        if (dir === options.output_dir) build = false; // don't build files inside the build dir
       }
       if (build) build_and_output();
     });
